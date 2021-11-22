@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 export default function App() {
   return (
@@ -9,6 +9,11 @@ export default function App() {
       <Text style={styles.text}>我是資工大二的林品妤</Text>
       <Text style={styles.text}>總之先在這裡放個可愛的橘子</Text>
       <Image source={require('./assets/orange.jpg')} style={styles.img} /> 
+      <TouchableOpacity
+        onPress={() => alert('Hi, Im a cute orange!')}
+        style={styles.touchableOpacity}>
+        <Text style={{ fontSize: 20, color: '#fff' }}>Click Me</Text>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
@@ -22,6 +27,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
+    fontSize: 20,
     color: '#055',
   },
   img: {
@@ -29,5 +35,12 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     width: 300,
     height: 300,
+    margin: 10
+  },
+  touchableOpacity: {
+    backgroundColor: '#c73',
+    padding: 10,
+    paddingHorizontal: 20,
+    borderRadius: 50
   }
 });
